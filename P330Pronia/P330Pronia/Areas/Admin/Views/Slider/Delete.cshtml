@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+}
+
+@model Slider
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div style="border: 1px dashed black; padding: 20px">
+                <div>
+                    <img src="~/assets/images/website-images//@Model.Image" style="max-width: 25%" />
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Title: <span style="font-weight:300">@Model.Title</span></h4>
+                </div>
+                <div style="display:flex; align-items: center">
+                    <h4>Suptitle: <span style="font-weight:300">@Model.Suptitle</span></h4>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Description: </h4>
+                    <span style="font-weight:300">@Model.Description</span>
+                </div>
+                <div style="display: flex">
+                    <form method="post">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                    <a class="btn btn-primary" asp-action="Index" style="margin-left: 10px">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
