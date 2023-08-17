@@ -22,6 +22,19 @@ public class HomeController : Controller
             Features = features
         };
 
+        HttpContext.Session.SetString("name", "Togrul");
+        HttpContext.Response.Cookies.Append("surname", "Memmedov", new CookieOptions
+        {
+            MaxAge = TimeSpan.FromMinutes(1)
+        });
+
         return View(homeViewModel);
+    }
+
+    public IActionResult Test()
+    {
+        string name = HttpContext.Session.GetString("name");
+        string surname = HttpContext.Request.Cookies["surname"];
+        return Content(surname);
     }
 }

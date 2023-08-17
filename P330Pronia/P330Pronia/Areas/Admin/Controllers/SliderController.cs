@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using P330Pronia.Models;
 
 namespace P330Pronia.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize(Roles = "Admin, Moderator")]
 public class SliderController : Controller
 {
     private readonly AppDbContext _context;
@@ -64,6 +66,7 @@ public class SliderController : Controller
             return NotFound();
 
         _context.Sliders.Remove(slider);
+        var state = _context.Entry(slider).State;
         await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(Index));

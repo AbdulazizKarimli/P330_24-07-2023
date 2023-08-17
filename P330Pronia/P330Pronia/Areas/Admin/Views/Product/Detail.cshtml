@@ -1,0 +1,64 @@
+﻿@using P330Pronia.Areas.Admin.ViewModels.ProductViewModels
+@model ProductDetailViewModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+            <div style="border: 1px dashed black; padding: 20px">
+                <div>
+                    <img src="~/assets/images/website-images//@Model.Image" style="max-width: 25%" />
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Name: <span style="font-weight:300">@Model.Name</span></h4>
+                </div>
+                <div style="display:flex; align-items: center">
+                    <h4>Description: <span style="font-weight:300">@Model.Description</span></h4>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Price: </h4>
+                    <span style="font-weight:300">@Model.Price</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Rating: </h4>
+                    <span style="font-weight:300">@Model.Rating</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Tags: </h4>
+                    <ul>
+                        @foreach (var tagName in Model.TagNames)
+                        {
+                            <li>@tagName</li>
+                        }
+                    </ul>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Category name: </h4>
+                    <span style="font-weight:300">@Model.CategoryName</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Created date: </h4>
+                    <span style="font-weight:300">@Model.CreatedDate</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Created by: </h4>
+                    <span style="font-weight:300">@Model.CreatedBy</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Updated date: </h4>
+                    <span style="font-weight:300">@Model.UpdatedDate</span>
+                </div>
+                <div style="display:flex; align-items: center;">
+                    <h4>Updated by: </h4>
+                    <span style="font-weight:300">@Model.UpdatedBy</span>
+                </div>
+                <div>
+                    <a class="btn btn-primary" asp-action="Index">Go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

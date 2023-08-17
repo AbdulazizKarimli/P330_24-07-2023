@@ -4,7 +4,7 @@ namespace P330Pronia.Areas.Admin.ViewModels.FeatureViewModels;
 
 public class CreateFeatureViewModel
 {
-    public string Image { get; set; }
+    public IFormFile Image { get; set; }
     [Required, MaxLength(120)]
     public string Title { get; set; }
     [Required, MaxLength(255)]
